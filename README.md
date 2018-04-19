@@ -6,7 +6,7 @@ Java开发者技术图谱，以及技术点总结，欢迎编辑。
 ## Java 
 ### Basic
 	
-- Core
+- [Core](https://github.com/Bboy-AJ/JavaDeveloper-SkillMap/blob/master/docs/Basic/Core/Core.md)
 
 
-- Essential Classes
+- [Essential Classes](https://github.com/Bboy-AJ/JavaDeveloper-SkillMap/blob/master/docs/Basic/EssentialClasses/EssentialClasses.md)
