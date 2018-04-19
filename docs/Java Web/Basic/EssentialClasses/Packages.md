@@ -11,7 +11,8 @@
 - javax.*：最早表示标准库的拓展（extension)，后来随着javax的发展，部分类变成了Java API，但是再把Javax中的类迁移到java包会对现在的代码造成很大的影响，于是放弃了。现在javax包的一些类也是标准类库的一部分。
 - org.*：企业或组织提供的Java类库，常用的是w3c提供的对XML、网页等的操作类。
 
-<div align=center><img src="https://raw.githubusercontent.com/Bboy-AJ/JavaDeveloper-SkillMap/images/Java Web/JavaPackagesMap.png"></div>
+<br>
+<div align=center><img src="https://raw.githubusercontent.com/Bboy-AJ/JavaDeveloper-SkillMap/master/images/Java Web/JavaPackagesMap.png"></div>
 
 ## 常见包
 
