@@ -51,8 +51,8 @@
  - **throw、throws**
  抛出异常，方法自己不处理异常，仅仅是把异常抛给其调用者。使用throw处理异常通常的原因是：方法本身不知道如何处理异常，或者说让调用者处理更合适。
 
-<table><tr><td bgcolor=#35343A><font size=5 color=white>原则</td></tr></table>   
-<br>
+# 原则
+
 &emsp;&emsp;为了更好的使用java的异常处理机制，Jim Cushing总结了三个原则：具体明确、及早抛出、延迟捕获。
 
  - **具体明确**
@@ -111,8 +111,9 @@ Exception in thread "main" java.lang.IllegalArgumentException: filename is null
  - **延迟捕获**
  
  既然有抛出异常，就需要捕获异常，大多数情况下我们可能都是提前捕获异常（编译器会进行异常检查，会提示捕获或者抛出异常），常见的做法就是try catch一下。
-<div align=center>
-![这里写图片描述](http://img.blog.csdn.net/20180412111705764?)
+
+<br>
+<div align=center><img src="http://img.blog.csdn.net/20180412111705764?"></div>
 
 &emsp;&emsp;上面读取文件的代码可能会变成这样：
 
@@ -132,8 +133,8 @@ public static  void readFile(String filename) throws FileNotFoundException {
 
 &emsp;&emsp;延迟捕获指的是：不要在程序或者用户有能力处理异常之前捕获它，就像上面的FileNotFoundException异常，如果在readFile方法中捕获，又该如何处理异常。最不应该的是什么都不做，空的catch块儿等于把整个异常丢进黑洞，所有的异常信息都会丢失。打印到日志是一种方法，但是只有程序员能够看懂。最好的方式是延迟捕获，把异常抛给它的调用者，最后根据异常给用户少量但是清晰的提示，比如文件未找到，重新选择文件。
 
-<table><tr><td bgcolor=#35343A><font size=5 color=white>异常链</td></tr></table>   
-<br>
+# 异常链
+
 &emsp;&emsp;	在大型的软件开发中，往往会有方法的层级调用，一旦底层方法出现异常，其调用者也出现异常，进而导致一连串的异常，像多米诺骨牌一样。
 
 &emsp;&emsp;假设B模块完成自己的逻辑需要调用A模块的方法，如果A模块发生异常，则B也将不能完成而发生异常，但是B在抛出异常时，会将A的异常信息掩盖掉，这将使得异常的根源信息丢失。异常的链化可以将多个模块的异常串联起来，使得异常信息不会丢失，保留每个异常的信息。
@@ -167,8 +168,4 @@ public class Test {
 }
 ```
 
-<table><tr><td bgcolor=#35343A><font size=5 color=white>小结</td></tr></table>   
-<br>
-&emsp;&emsp;关于异常的处理，可能没有Java程序员不知道try catch，但是其中的细节以及如何更好的处理异常，提高程序的健壮性却还需要花点时间去思考。
 
-&emsp;&emsp;文章很长，感谢大家耐心的阅读，欢迎评论，一起交流。
